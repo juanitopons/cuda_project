@@ -81,7 +81,7 @@ __global__ void oddEven_transp_even(int * d_array, int k) {
 	}
 }
 
-__global__ void printArray(int *d_array, int k){
+__global__ void checkArrayGPU(int *d_array, int k){
 	int boolean = 1;
     for(int i = 0; i < k - 1; i++) {
         if(d_array[i] > d_array[i + 1]) {
@@ -89,10 +89,24 @@ __global__ void printArray(int *d_array, int k){
         	break;
         }
     }
-    if(array[k - 1] == 0)
+    if(d_array[k - 1] == 0)
     	boolean = 0;
 
-    printf("Boolean = %d; (if 1 all OK)\n\n", boolean);
+    printf("Boolean = %d; (if 1 all OK)\n", boolean);
+}
+
+void checkArrayCPU(int *h_array, int k){
+	int boolean = 1;
+    for(int i = 0; i < k - 1; i++) {
+        if(h_array[i] > h_array[i + 1]) {
+        	boolean = 0;
+        	break;
+        }
+    }
+    if(h_array[k - 1] == 0)
+    	boolean = 0;
+
+    printf("Boolean = %d; (if 1 all OK)\n", boolean);
 }
 
 
@@ -147,7 +161,7 @@ int main( int argc, char* argv[] )
 		cudaThreadSynchronize();
 	    gettimeofday(&t2, 0);
 	    printf("N = %d - > Acabado Paralelo\n", k);
-	    printArray<<<1,1>>>(d_array, k);
+	    checkArrayGPU<<<1,1>>>(d_array, k);
 
 
 		/** SEQUENTIALL **/
@@ -158,7 +172,7 @@ int main( int argc, char* argv[] )
 
 	    gettimeofday(&t2_seq, 0);
 	    printf("N = %d - > Acabado Secuencial\n", k);
-	    printArray<<<1,1>>>(h_array, k);
+	    checkArrayCPU(h_array, k);
 
 		/** >>>>>>> **/
 
@@ -171,8 +185,9 @@ int main( int argc, char* argv[] )
         inc *= 2;
 
 	    cudaFree(d_array);
-	    cudaDeviceSynchronize();
 	}
+
+	cudaDeviceSynchronize();
 
 	fclose(f1);
 

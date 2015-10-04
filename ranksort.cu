@@ -46,7 +46,7 @@ __global__ void rankSort(int * array, int * result, int k) {// Ejemplo: 4 numero
 	__shared__ int tamThreads;
 	__shared__ int miNumero;
 	__shared__ int rank;
-	int localRank = 0;
+	int localRank;
 	int comparador;
 	int range2 = threadIdx.x * b;
 
@@ -57,28 +57,23 @@ __global__ void rankSort(int * array, int * result, int k) {// Ejemplo: 4 numero
 
 	int range1 = blockIdx.x * a;
 	for(int i = range1; i < range1 + a; i++) {	
-		//printf("Relacion [talla/bloques]: %d; Ralacion [talla/threadsPerBlock]: %d\n", a, b );
 		if(threadIdx.x == 0) {
-			//sFlag = 0;
 			miNumero = array[i];
 			rank = 0;
-			//printf("Soy el bloque %d y mi número es %d\n", blockIdx.x, miNumero);
 		}
 		__syncthreads();
 
+		localRank = 0;
 		for(int j = range2; j < range2 + b; j++) {
 			comparador = array[j];
-			//printf("Soy el thread %d del bloque %d y mi comparador es %d\n contra %d", threadIdx.x, blockIdx.x, comparador, miNumero);
 			if(comparador < miNumero || (comparador == miNumero && (j < i)))
 				localRank += 1;
-				//atomicAdd(&rank, 1);
 		}
 
 		if(threadIdx.x < tamThreads) {
 			comparador = array[(blockDim.x * b) + threadIdx.x];
 			if(comparador < miNumero || (comparador == miNumero && (((blockDim.x * b) + threadIdx.x) < i)))
 				localRank += 1;
-				//atomicAdd(&rank, 1);
 		}
 
 		atomicAdd(&rank, localRank);
@@ -102,17 +97,20 @@ __global__ void rankSort(int * array, int * result, int k) {// Ejemplo: 4 numero
 
 		__syncthreads();
 
+		localRank = 0;
 		for(int j = range2; j < range2 + b; j++) {
 			comparador = array[j];
 			if(comparador < miNumero || (comparador == miNumero && (j < (gridDim.x * a + blockIdx.x))))
-				atomicAdd(&rank, 1);
+				localRank += 1;
 		}
 
 		if(threadIdx.x < tamThreads) {
 			comparador = array[(blockDim.x * b) + threadIdx.x];
 			if(comparador < miNumero || (comparador == miNumero && (((blockDim.x * b) + threadIdx.x) < gridDim.x * a  + blockIdx.x)))
-				atomicAdd(&rank, 1);
+				localRank += 1;
 		}
+
+		atomicAdd(&rank, localRank);
 
 		__syncthreads();
 
@@ -122,7 +120,7 @@ __global__ void rankSort(int * array, int * result, int k) {// Ejemplo: 4 numero
 	}
 }
 
-__global__ void printArray(int *d_array, int k){
+__global__ void checkArrayGPU(int *d_array, int k){
 	int boolean = 1;
     for(int i = 0; i < k - 1; i++) {
         if(d_array[i] > d_array[i + 1]) {
@@ -130,10 +128,38 @@ __global__ void printArray(int *d_array, int k){
         	break;
         }
     }
-    if(array[k - 1] == 0)
+    if(d_array[k - 1] == 0)
     	boolean = 0;
 
     printf("Boolean = %d; (if 1 all OK)\n\n", boolean);
+}
+
+void checkArrayCPU(int *h_array, int k){
+	int boolean = 1;
+    for(int i = 0; i < k - 1; i++) {
+        if(h_array[i] > h_array[i + 1]) {
+        	boolean = 0;
+        	break;
+        }
+    }
+    if(h_array[k - 1] == 0)
+    	boolean = 0;
+
+    printf("Boolean = %d; (if 1 all OK)\n\n", boolean);
+}
+
+void printArrayCPU(int * h_array, int k) {
+	for(int i = 0; i < k; i++) {
+		printf("- %d -", h_array[i]);
+	}
+	printf("\n");
+}
+
+__global__ void printArrayGPU(int * d_array, int k) {
+	for(int i = 0; i < k; i++) {
+		printf("- %d -", d_array[i]);
+	}
+	printf("\n");
 }
 
 int main( int argc, char* argv[] )
@@ -166,26 +192,26 @@ int main( int argc, char* argv[] )
 	    cudaMalloc(&d_result, k * sizeof(int));
 	    cudaMemcpy(d_array, h_array, k * sizeof(int), cudaMemcpyHostToDevice);
 
-
 	    /** PARALELL **/
-	    
+
 	    gettimeofday(&t1, 0);
     	rankSort<<<numBlocks, threadsPerBlock>>>(d_array, d_result, k);
 	    cudaThreadSynchronize();
         gettimeofday(&t2, 0);
         printf("N = %d - > Acabado Paralelo\n", k);
+        checkArrayGPU<<<1,1>>>(d_result, k);
 
         /** >>>>>>> **/
 
-        printArray<<<1,1>>>(d_result, k);
+     
 
         /** SEQUENTIALL **/
-        
+
         gettimeofday(&t1_seq, 0);
         rankSortSeq(h_array, h_result, k);
         gettimeofday(&t2_seq, 0);
         printf("N = %d - > Acabado Secuencial\n", k);
-        printArray<<<1,1>>>(h_result, k);
+        checkArrayCPU(h_result, k);
 
         /** >>>>>>> **/
 
@@ -199,8 +225,9 @@ int main( int argc, char* argv[] )
 
 	    cudaFree(d_array);
 	    cudaFree(d_result);
-	    cudaDeviceSynchronize();
 	}
+
+	cudaDeviceSynchronize();
 
 	fclose(f1);
 
