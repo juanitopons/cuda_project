@@ -1,0 +1,56 @@
+==4166== NVPROF is profiling process 4166, command: ./odd_even_mergesort_profiling.out
+==4166== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==4166== Profiling application: ./odd_even_mergesort_profiling.out
+==4166== Profiling result:
+==4166== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"sm_efficiency","Multiprocessor Activity",16.793191%,28.524971%,22.267092%
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"gld_efficiency","Global Memory Load Efficiency",50.000000%,100.000000%,90.000000%
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"gst_efficiency","Global Memory Store Efficiency",26.288391%,89.577206%,65.782937%
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"warp_execution_efficiency","Warp Execution Efficiency",99.867938%,100.000000%,99.937670%
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_per_warp","Instructions per warp",30.041016,51.000000,48.230078
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"shared_load_transactions","Shared Load Transactions",0,0,0
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"shared_store_transactions","Shared Store Transactions",0,0,0
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"gld_transactions","Global Load Transactions",1024,2048,1365
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"gst_transactions","Global Store Transactions",472,2048,1133
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"l2_utilization","L2 Cache Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"dram_utilization","Device Memory Utilization","Low (1)","Low (2)","Low (1)"
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (3)","Mid (4)","Low (3)"
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"cf_executed","Executed Control-Flow Instructions",2048,2048,2048
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"ldst_executed","Executed Load/Store Instructions",2048,2048,2048
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_executed","Instructions Executed",15381,26112,24693
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"issue_slots","Issue Slots",15989,28551,25333
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_fp_32","FP Instructions(Single)",1,16384,14200
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_integer","Integer Instructions",229388,442367,401965
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_bit_convert","Bit-Convert Instructions",5,81920,71002
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_control","Control-Flow Instructions",16384,16384,16384
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_compute_ld_st","Load/Store Instructions",42514,49166,46939
+"Tesla K40m (0)","oddEvenSortOdd(int*, int, int, int)",15,"inst_misc","Misc Instructions",131072,147455,133255
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"sm_efficiency","Multiprocessor Activity",12.915095%,37.321207%,24.871341%
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"gld_efficiency","Global Memory Load Efficiency",25.000000%,100.000000%,79.700494%
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"gst_efficiency","Global Memory Store Efficiency",12.500000%,100.000000%,63.068469%
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"warp_execution_efficiency","Warp Execution Efficiency",99.872649%,99.993570%,99.960610%
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_per_warp","Instructions per warp",94.158203,97.003906,96.521611
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"shared_load_transactions","Shared Load Transactions",0,0,0
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"shared_store_transactions","Shared Store Transactions",0,0,0
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"gld_transactions","Global Load Transactions",512,3007,1824
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"gst_transactions","Global Store Transactions",54,2782,1059
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"l2_utilization","L2 Cache Utilization","Low (1)","Low (2)","Low (1)"
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"dram_utilization","Device Memory Utilization","Low (1)","Low (2)","Low (1)"
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (3)","Mid (5)","Mid (4)"
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"cf_executed","Executed Control-Flow Instructions",1024,2048,1797
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"ldst_executed","Executed Load/Store Instructions",1024,2048,1794
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_executed","Instructions Executed",24833,49665,43536
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"issue_slots","Issue Slots",21484,47819,39792
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_fp_32","FP Instructions(Single)",24534,49146,43050
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_integer","Integer Instructions",417246,851878,736463
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_bit_convert","Bit-Convert Instructions",122670,245730,215252
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_control","Control-Flow Instructions",16370,32766,28793
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_compute_ld_st","Load/Store Instructions",27090,48128,39513
+"Tesla K40m (0)","oddEvenSortEven(int*, int, int, int, int, int)",105,"inst_misc","Misc Instructions",81878,163830,143802

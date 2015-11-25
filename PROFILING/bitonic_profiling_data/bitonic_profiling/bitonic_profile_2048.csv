@@ -1,0 +1,31 @@
+==59056== NVPROF is profiling process 59056, command: ./bitonic_profiling.out
+==59056== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==59056== Profiling application: ./bitonic_profiling.out
+==59056== Profiling result:
+==59056== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"sm_efficiency","Multiprocessor Activity",1.653457%,2.860318%,2.147552%
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"gld_efficiency","Global Memory Load Efficiency",25.000000%,100.000000%,76.136364%
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"gst_efficiency","Global Memory Store Efficiency",12.500000%,99.414062%,51.218862%
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"warp_execution_efficiency","Warp Execution Efficiency",58.334704%,100.000000%,88.785833%
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_per_warp","Instructions per warp",35.656250,95.000000,64.338542
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"shared_load_transactions","Shared Load Transactions",0,0,0
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"shared_store_transactions","Shared Store Transactions",0,0,0
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"gld_transactions","Global Load Transactions",64,256,127
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"gst_transactions","Global Store Transactions",32,256,116
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"l2_utilization","L2 Cache Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (3)","Mid (4)","Low (3)"
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"cf_executed","Executed Control-Flow Instructions",160,320,213
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"ldst_executed","Executed Load/Store Instructions",112,256,155
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_executed","Instructions Executed",1141,3040,2058
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"issue_slots","Issue Slots",1105,3169,2050
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_fp_32","FP Instructions(Single)",1,1024,963
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_integer","Integer Instructions",18444,31743,30298
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_bit_convert","Bit-Convert Instructions",5,5120,4815
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_control","Control-Flow Instructions",1560,2048,1802
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_compute_ld_st","Load/Store Instructions",2098,3102,2886
+"Tesla K40m (0)","bitonicSort(int*, int, int, int)",66,"inst_misc","Misc Instructions",7704,9215,8007

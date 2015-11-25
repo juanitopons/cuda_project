@@ -1,0 +1,31 @@
+==28389== NVPROF is profiling process 28389, command: ./ranksort_strong_scaling2.out
+==28389== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==28389== Profiling application: ./ranksort_strong_scaling2.out
+==28389== Profiling result:
+==28389== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"sm_efficiency","Multiprocessor Activity",98.589506%,98.589506%,98.589506%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"shared_efficiency","Shared Memory Efficiency",13.105215%,13.105215%,13.105215%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"gld_efficiency","Global Memory Load Efficiency",12.500000%,12.500000%,12.500000%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"gst_efficiency","Global Memory Store Efficiency",12.500000%,12.500000%,12.500000%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"warp_execution_efficiency","Warp Execution Efficiency",99.406067%,99.406067%,99.406067%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_per_warp","Instructions per warp",82094.722900,82094.722900,82094.722900
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"shared_load_transactions","Shared Load Transactions",4712337,4712337,4712337
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"shared_store_transactions","Shared Store Transactions",3648401,3648401,3648401
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"gld_transactions","Global Load Transactions",4295032832,4295032832,4295032832
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"gst_transactions","Global Store Transactions",65536,65536,65536
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"l2_utilization","L2 Cache Utilization","Mid (4)","Mid (4)","Mid (4)"
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"cf_executed","Executed Control-Flow Instructions",55078967,55078967,55078967
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"ldst_executed","Executed Load/Store Instructions",149834106,149834106,149834106
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_executed","Instructions Executed",1344953868,1344953868,1344953868
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"issue_slots","Issue Slots",5206449800,5206449800,5206449800
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_fp_32","FP Instructions(Single)",1048576,1048576,1048576
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_integer","Integer Instructions",31725455360,31725455360,31725455360
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_bit_convert","Bit-Convert Instructions",3145728,3145728,3145728
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_control","Control-Flow Instructions",1174012117,1174012117,1174012117
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_compute_ld_st","Load/Store Instructions",4366976200,4366976200,4366976200
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_misc","Misc Instructions",4669441024,4669441024,4669441024

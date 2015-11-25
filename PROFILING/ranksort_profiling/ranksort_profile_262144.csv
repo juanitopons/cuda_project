@@ -1,0 +1,25 @@
+==71953== NVPROF is profiling process 71953, command: ./ranksort_profiling.out
+==71953== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==71953== Profiling application: ./ranksort_profiling.out
+==71953== Profiling result:
+==71953== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"shared_efficiency","Shared Memory Efficiency",11.820182%,11.820182%,11.820182%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"gld_efficiency","Global Memory Load Efficiency",12.500000%,12.500000%,12.500000%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"gst_efficiency","Global Memory Store Efficiency",12.500000%,12.500000%,12.500000%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",99.999982%,99.999982%,99.999982%
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_per_warp","Instructions per warp",10056.801091,10056.801091,10056.801091
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"shared_load_transactions","Shared Load Transactions",46391702,46391702,46391702
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"shared_store_transactions","Shared Store Transactions",35971261,35971261,35971261
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"gst_transactions","Global Store Transactions",262144,262144,262144
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"cf_executed","Executed Control-Flow Instructions",725585380,725585380,725585380
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"ldst_executed","Executed Load/Store Instructions",2288993831,2288993831,2288993831
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_executed","Instructions Executed",21090318704,21090318704,21090318704
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"issue_slots","Issue Slots",82834888587,82834888587,82834888587
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_fp_32","FP Instructions(Single)",134215680,134215680,134215680
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_bit_convert","Bit-Convert Instructions",402647040,402647040,402647040
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_control","Control-Flow Instructions",18045151766,18045151766,18045151766
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_compute_ld_st","Load/Store Instructions",69344271953,69344271953,69344271953
+"Tesla K40m (0)","rankSort(int*, int*, int)",1,"inst_misc","Misc Instructions",72219152383,72219152383,72219152383
+==71953== Warning: One or more events or metrics overflowed. Rerun with "--print-gpu-trace" for detail.

@@ -1,0 +1,56 @@
+==14055== NVPROF is profiling process 14055, command: ./oddeven_transp_profiling.out
+==14055== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==14055== Profiling application: ./oddeven_transp_profiling.out
+==14055== Profiling result:
+==14055== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"sm_efficiency","Multiprocessor Activity",0.923432%,1.887794%,1.718329%
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"gld_efficiency","Global Memory Load Efficiency",50.000000%,50.000000%,50.000000%
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"gst_efficiency","Global Memory Store Efficiency",0.000000%,49.212598%,31.009580%
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"warp_execution_efficiency","Warp Execution Efficiency",100.000000%,100.000000%,100.000000%
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_per_warp","Instructions per warp",38.000000,38.000000,38.000000
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"shared_load_transactions","Shared Load Transactions",0,0,0
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"shared_store_transactions","Shared Store Transactions",0,0,0
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"gld_transactions","Global Load Transactions",64,64,64
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"gst_transactions","Global Store Transactions",0,64,46
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"l2_utilization","L2 Cache Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"dram_utilization","Device Memory Utilization","Idle (0)","Low (1)","Idle (0)"
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (2)","Low (2)","Low (2)"
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"cf_executed","Executed Control-Flow Instructions",32,32,32
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"ldst_executed","Executed Load/Store Instructions",64,64,64
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_executed","Instructions Executed",608,608,608
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"issue_slots","Issue Slots",682,735,717
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_fp_32","FP Instructions(Single)",512,512,512
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_integer","Integer Instructions",10240,10240,10240
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_bit_convert","Bit-Convert Instructions",1536,1536,1536
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_control","Control-Flow Instructions",512,512,512
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_compute_ld_st","Load/Store Instructions",1024,2026,1519
+"Tesla K40m (0)","oddEven_transp_odd(int*, int)",512,"inst_misc","Misc Instructions",3584,3584,3584
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"sm_efficiency","Multiprocessor Activity",1.574843%,1.894896%,1.719065%
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"gld_efficiency","Global Memory Load Efficiency",47.140221%,47.140221%,47.140221%
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"gst_efficiency","Global Memory Store Efficiency",0.000000%,46.296296%,29.735057%
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"l2_l1_read_hit_rate","L2 Hit Rate (L1 Reads)",100.000000%,100.000000%,100.000000%
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"warp_execution_efficiency","Warp Execution Efficiency",99.849760%,99.859776%,99.854905%
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_per_warp","Instructions per warp",39.000000,39.000000,39.000000
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"shared_load_transactions","Shared Load Transactions",0,0,0
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"shared_store_transactions","Shared Store Transactions",0,0,0
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"gld_transactions","Global Load Transactions",79,79,79
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"gst_transactions","Global Store Transactions",0,79,54
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"l1_shared_utilization","L1/Shared Memory Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"l2_utilization","L2 Cache Utilization","Low (1)","Low (1)","Low (1)"
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"dram_utilization","Device Memory Utilization","Idle (0)","Low (1)","Idle (0)"
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"alu_fu_utilization","Arithmetic Function Unit Utilization","Low (2)","Low (2)","Low (2)"
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"cf_executed","Executed Control-Flow Instructions",32,32,32
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"ldst_executed","Executed Load/Store Instructions",64,64,64
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_executed","Instructions Executed",624,624,624
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"issue_slots","Issue Slots",687,775,735
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_fp_32","FP Instructions(Single)",511,511,511
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_integer","Integer Instructions",10736,10736,10736
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_bit_convert","Bit-Convert Instructions",1533,1533,1533
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_control","Control-Flow Instructions",512,512,512
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_compute_ld_st","Load/Store Instructions",1022,2022,1517
+"Tesla K40m (0)","oddEven_transp_even(int*, int)",512,"inst_misc","Misc Instructions",3581,3581,3581
